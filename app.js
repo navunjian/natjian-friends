@@ -22,7 +22,7 @@ var conf = {
 	client_id: process.env.facebook_app_id
   , client_secret: process.env.facebook_app_secret
   , scope: 'email, user_about_me, user_activities, read_stream'
-  , redirect_uri: 'http://localhost:3000/auth/facebook'
+  , redirect_uri: 'https://natjianfriends.herokuapp.com/auth/facebook'
 };
 
 //Configures the Template engine
