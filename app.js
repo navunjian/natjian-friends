@@ -22,7 +22,7 @@ var conf = {
 	client_id: process.env.facebook_app_id
   , client_secret: process.env.facebook_app_secret
   , scope: 'email, user_about_me, user_activities, read_stream'
-  , redirect_uri: 'https://natjianfriends.herokuapp.com/auth/facebook'
+  , redirect_uri: 'http://natjianfriends.herokuapp.com/auth/facebook'
 };
 
 //Configures the Template engine
@@ -74,14 +74,15 @@ app.get('/auth/facebook', function(req, res) {
     , "client_secret":  conf.client_secret
     , "code":           req.query.code
   }, function (err, facebookRes) {
-    graph.get("/me", function(err, res) {
+    graph.get("/me/likes", function(err, res) {
     console.log(res);
     });
+    
     //Store user data after stringfying it
     //Log returned data
 
     //Return data to the webpage
-     res.render('loggedIn', {res: 'Natalie Avunjian'});
+     res.render('loggedIn', {res: 'Dumb and Dumber'});
    // res.redirect('/loggedIn');
   });
 
